@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getCoursesData } from '../Redux/Course/action';
 import { Link } from 'react-router-dom';
 import CourseDetail from './CourseDetail';
-
+import "./Courselisting.css"
+import { Col, Container, Row } from 'react-bootstrap';
 export default function CourseListing() {
   
   const dispatch = useDispatch();
@@ -15,13 +16,18 @@ export default function CourseListing() {
   console.log("course",courselist)
   
   return (
-    <div>
-    <h1>Course List</h1>
-    {courselist.map((course) => (
-        <div key={course.id}>
-           <Link to={`/detail/${course.id}`} > {course.name} - {course.instructor}</Link> 
-        </div>
+    <Container className='list container-md'>
+    <h1 className='listitle'>Course List</h1>
+    <Row>
+      {courselist.map((course) => (
+        <Col key={course.id}>
+          <Link to={`/detail/${course.id}`} className='listname'>
+             <p>{course.name} </p>
+            <p>{course.instructor}</p> 
+          </Link>
+        </Col>
       ))}
-    </div>
+    </Row>
+  </Container>
   )
 }

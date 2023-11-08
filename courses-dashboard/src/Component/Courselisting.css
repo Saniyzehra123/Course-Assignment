@@ -1,0 +1,16 @@
+.list{
+    width: 50%;
+   margin-top:15%;
+  
+}
+.listitle{
+  color:#363062;
+}
+.listname{
+    color: #435585;
+    font-weight: 400;
+    font-size: 15px;
+    text-decoration: none;
+    text-align: center;
+}
+

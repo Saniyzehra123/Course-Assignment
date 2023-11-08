@@ -6,7 +6,7 @@
             "instructor": "John Doe",  
            "description":"Learn the basics of React Native development and build your first mobile app.",
             "enrollmentStatus":"Open",
-            "thumbnail": "your.image.here', //Link to the course thumbnail",
+            "thumbnail": "https://crowdbotics.ghost.io/content/images/2021/05/React-Native-Img.png",
             "duration":"8 weeks", 
             "schedule": "Tuesdays and Thursdays, 6:00 PM - 8:00 PM",
             "location": "Online",

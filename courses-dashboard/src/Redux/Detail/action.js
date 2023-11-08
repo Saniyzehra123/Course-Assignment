@@ -9,7 +9,7 @@ const getDetails = (payload) => ({
 export const getDetailData = () => {
     return async (dispatch)=>{
         try{
-            const response = await axios.get('http://localhost:8080/syllabus')
+            const response = await axios.get('https://sttudent.onrender.com/api/syllabus')
             const detailData = response.data
 
             dispatch(getDetails(detailData))

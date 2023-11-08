@@ -1,51 +1,31 @@
 import * as types from "../actionTypes";
 import axios from 'axios';
+import { getDatabase, ref, onValue, off } from 'firebase/database';
+import React, { useState, useEffect } from 'react';
+import firebase from 'firebase/app';
  
 const getCourses = (payload)=>({
 type:types.GET_COURSES,
 payload
 })
 
-
-export const  getCoursesData = () => {
-    return async (dispatch) => {
-      try {
-        // Make an API request using Axios
-        const response = await axios.get('http://localhost:8080/courseModel');
-   
-        const courseData = response.data;
-   
-        dispatch(getCourses(courseData));
-      } catch (error) {
-        console.error('Error fetching courses:', error);
-       
-      }
-    };
-  };
-   
+  export const getCoursesData = () => {
+    return async (dispatch)=>{
+        try{
+            const response = await axios.get('https://sttudent.onrender.com/api/courseModel')
+            const courseData= response.data
+           
+            dispatch(getCourses(courseData));
+        }
+        catch(error){
+            console.error('Error fetching detail:', error);
+         }
+    }
+}
   
   
   
   
   
   
-  
-
-// export const getCourseData =(payload)=>{
-//     return (dispatch) => {
-//         // dispatch(getTShirt());
-//         axios.get(`https://nice-blue-zebra-hose.cyclic.app/api/tshirt`,{
-//             params:{
-//                 ...payload,
-//             }
-//         })
-//             .then(response => {
-//                 dispatch(getTShirtSuccess(response.data));
-//                // console.log("raj",response.data);
-//             }).catch(error => {
-//                 dispatch(getTShirtFailure(error));
-//             }
-//         );
-//     }
-//     }
 
